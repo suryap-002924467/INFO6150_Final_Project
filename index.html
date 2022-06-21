@@ -38,6 +38,49 @@
               </div>
             </form>
             <h3 class="text-center">Ready to watch? Enter your email to create or restart your membership.</h3>
+
+            <!-- Button trigger modal -->
+            <div class="col text-center">
+              <button type="button" class="btn btn-custom-danger px-5" data-bs-toggle="modal"
+                data-bs-target="#myModal">
+                Subscription Plans
+              </button>
+            </div>
+
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="lead_id" class="col-form-label">ID:</label>
+                        <input type="text" class="form-control" id="lead_id">
+                      </div>
+                      <div class="mb-3">
+                        <label for="first_name" class="col-form-label">First Name:</label>
+                        <input type="text" class="form-control" id="first_name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="last_name" class="col-form-label">Last Name:</label>
+                        <input type="text" class="form-control" id="last_nam" e>
+                      </div>
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </div>
@@ -54,7 +97,29 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img src="images/zdj1.png" alt="">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-interval=="10000">
+                <img src="../INFO6150_Final_Project/images/show1.jpg" class="d-block w-50" alt="...">
+              </div>
+              <div class="carousel-item" data-interval=="2000">
+                <img src="../INFO6150_Final_Project/images/show2.jpg" class="d-block w-50" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../INFO6150_Final_Project/images/show3.jpg" class="d-block w-50" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -201,6 +266,7 @@
             </div>
           </form>
         </div>
+
       </div>
     </div>
   </section>
@@ -252,12 +318,13 @@
             </div>
             <div class="col-md-12">
               <div class="dropdown mt-4">
-                <button class="btn btn-dark dropdown-toggle py-2" type="button" id="dropdownMenuButton"
+                <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-globe"></i> English
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">English</a>
+                  <a class="dropdown-item" href="#">Hindi</a>
                 </div>
               </div>
             </div>
