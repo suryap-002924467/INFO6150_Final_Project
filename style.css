@@ -152,6 +152,8 @@ footer .dropdown button {
   background-color: #000;
 }
 
+
+
 /* responsive */
 /* tablet */
 /* mobile */
@@ -192,3 +194,7 @@ footer .dropdown button {
   }
 }
 /*# sourceMappingURL=style.css.map */
+.pagination{
+  align-content: center;
+  padding-left: 550px;
+}

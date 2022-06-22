@@ -4,19 +4,18 @@
 
 Implemented :
 
-1. Accordion - 
-2. Card - 
-3. Buttons -
-4. List group - 
+1. Accordion - Implemented for FAQs
+2. Card - Used for TV show description
+3. Buttons - Used for sign in, subscription plans and get started
+4. List group - Used in footer to present different options
+5. Tooltips - Used for sign in and other buttons
+6. Carousel - Implemented for Movie/TV thumbnails
+7. Dropdown  - Implemented for country 
+8. Modal - Implemented for subscription plans
 
-To be implemented components :
+10. Pagination-implemented at footer of the page.
 
-5.  Carousel
-6. Dropdown 
-7. Modal 
-8. Spinners
-9. Pagination
-10. Popovers
-11. Toasts
-12. Badge - For title
-13. Alerts - For signup
+
+
+11. Badge - used for profile button
+12. Alerts - used for live alerts.
