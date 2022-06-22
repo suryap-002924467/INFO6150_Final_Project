@@ -15,7 +15,7 @@ Implemented :
 
 10. Pagination-implemented at footer of the page.
 
-12. Popovers
-13. Toasts
-14. Badge - used for profile button
-15. Alerts - used for live alerts.
+
+
+11. Badge - used for profile button
+12. Alerts - used for live alerts.
