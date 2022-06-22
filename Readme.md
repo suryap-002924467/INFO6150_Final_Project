@@ -17,5 +17,5 @@ Implemented :
 
 12. Popovers
 13. Toasts
-14. Badge - For title
+14. Badge - used for profile button
 15. Alerts - used for live alerts.
