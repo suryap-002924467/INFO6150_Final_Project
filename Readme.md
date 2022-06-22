@@ -13,8 +13,9 @@ Implemented :
 7. Dropdown  - Implemented for country 
 8. Modal - Implemented for subscription plans
 9. Spinners
-10. Pagination
-11. Popovers
-12. Toasts
-13. Badge - For title
-14. Alerts - For signup
+10. Pagination-implemented at footer of the page.
+
+12. Popovers
+13. Toasts
+14. Badge - For title
+15. Alerts - For signup
