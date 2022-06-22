@@ -12,7 +12,7 @@ Implemented :
 6. Carousel - Implemented for Movie/TV thumbnails
 7. Dropdown  - Implemented for country 
 8. Modal - Implemented for subscription plans
-9. Spinners
+
 10. Pagination-implemented at footer of the page.
 
 12. Popovers
