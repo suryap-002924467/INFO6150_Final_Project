@@ -18,4 +18,4 @@ Implemented :
 12. Popovers
 13. Toasts
 14. Badge - For title
-15. Alerts - For signup
+15. Alerts - used for live alerts.
