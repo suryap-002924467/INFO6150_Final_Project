@@ -33,52 +33,7 @@ const WishScreen = ({ match, location, history }) => {
 	}
 
 	return (
-		<Row>
-			<Col md={9}>
-				<h1>Wish List</h1>
-				{wishItems.length === 0 ? (
-					<Message>
-						Your wish list is empty <Link to='/'>Go Back</Link>
-					</Message>
-				) : (
-					<ListGroup variant='flush'>
-						{wishItems.map((item) => (
-							<ListGroup.Item key={item.product}>
-								<Row>
-									<Col md={2}>
-										<Image src={item.poster_path} alt={item.original_title} fluid rounded />
-									</Col>
-									<Col md={3}>
-										<Link to={`/product/${item.product}`}>{item.original_title}</Link>
-									</Col>
-									<Col md={2}>${item.price}</Col>
-									<Col md={3}>
-										<Button
-											onClick={addToCartHandler}
-											className='btn-block'
-											type='button'
-											disabled={item.product.availableToRent === false}
-										>
-											Add To Cart
-										</Button>
-									</Col>
-									<Col md={2}>
-										<Button
-											type='button'
-											variant='light'
-											onClick={() => removeFromWishHandler(item.product)}
-										>
-											<i className='fas fa-trash'></i>
-										</Button>
-									</Col>
-								</Row>
-							</ListGroup.Item>
-						))}
-					</ListGroup>
-				)}
-			</Col>
-		</Row>
-	)
+		
 }
 
 export default WishScreen
