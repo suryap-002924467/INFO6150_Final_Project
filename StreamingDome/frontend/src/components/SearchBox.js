@@ -5,7 +5,12 @@ const SearchBox = ({ history }) => {
   const [keyword, setKeyword] = useState('')
 
   const submitHandler = (e) => {
-
+    e.preventDefault()
+    if (keyword.trim()) {
+      history.push(`/search/${keyword}`)
+    } else {
+      history.push('/')
+    }
   }
 
   return (
