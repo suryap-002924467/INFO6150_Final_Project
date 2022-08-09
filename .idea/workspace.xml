@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="93f6351f-f9bc-4d0d-b223-d6c6718edd9d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
