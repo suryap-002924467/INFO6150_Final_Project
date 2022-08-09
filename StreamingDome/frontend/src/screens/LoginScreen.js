@@ -31,16 +31,17 @@ const LoginScreen = ({ location, history }) => {
   }
 
   return (
-    <div className="color-overlay d-flex justify-content-center align-items-center">
-       <Form className="rounded p-4 p-sm-3">
-    <FormContainer>
+    <FormContainer >
+
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-     
-        <Form.Group className="mb-3" controlId='email'>
-          <Form.Label style={{color: "white"}}>Email Address</Form.Label>
-          <Form.Control size="small" width={50}
+        <Form.Group controlId='email'>
+          <Form.Label style={{color: "black"}}><h1>Sign In</h1></Form.Label>
+          <br></br>
+          <Form.Label style={{color: "black"}}>Email Id</Form.Label>
+          <Form.Control size="lg"
+            style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             required
@@ -49,9 +50,10 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group  className="mb-3" controlId='password'>
-          <Form.Label style={{color: "white"}}>Password</Form.Label>
-          <Form.Control 
+        <Form.Group controlId='password'>
+          <Form.Label style={{color: "black"}}>Password</Form.Label>
+          <Form.Control size="lg"
+          style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Enter password'
             required
@@ -68,15 +70,13 @@ const LoginScreen = ({ location, history }) => {
 
       <Row className='py-3' >
         <Col>
-          <span style={{color: "white"}}>New Customer?{' '}</span>
+          <span style={{color: "black"}}>New Customer?{' '}</span>
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          <span style={{color: "white"}}> Register</span>
+          <span style={{color: "black"}}> Register</span>
           </Link>
         </Col>
       </Row>
     </FormContainer>
-    </Form>
-    </div>
   )
 }
 

@@ -6,17 +6,18 @@ const Footer = () => {
     <footer className="py-5 bg-dark text-center text-white">
       <Container>
         <Row>
-          <div class="col-md-10 mx-auto">
+          <div class="col-md-10 mx-auto" align="left">
             <div class="row">
               <div class="col-md-12">
                 <p>Questions? Call 1-844-505-2993</p>
               </div>
+              <br></br>
               <div class="col-6 col-md-3">
                 <ul class="nav flex-column">
                   <li>FAQ</li>
-                  <li>Investor Relations</li>
+
                   <li>Ways to Watch</li>
-                  <li>Corporate Information</li>
+
                   <li>Only on StreamingDome</li>
                 </ul>
               </div>
@@ -35,33 +36,37 @@ const Footer = () => {
                   <li>Account</li>
                   <li>Redeem Gift Cards</li>
                   <li>Privacy</li>
-                  <li>Speed Test</li>
+
                 </ul>
               </div>
 
               <div class="col-6 col-md-3">
                 <ul class="nav flex-column">
-                  <li>Media Center</li>
+
                   <li>Buy Gift Cards</li>
                   <li>Cookie Preferences</li>
-                  <li>Legal Notices</li>
+
                 </ul>
 
               </div>
               <div class="col-md-12">
                 <div class="dropdown mt-4">
-                  <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
+                  {/* <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-globe"></i> English
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">English</a>
-                    <a class="dropdown-item" href="#">Hindi</a>
-                  </div>
+                  </button> */}
+                  <label htmlFor='language'>Language:&nbsp;</label>
+
+                  <select name="Language" id="language">
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Hindi">Hindi</option>
+                  </select>
                 </div>
               </div>
-              <div class="col-md-12">
-                <p class="copyright mt-3">StreamingDome</p>
+              <div class="col-sm" align="center">
+                <p class="copyright mt-3"> Copy right @StreamingDome</p>
               </div>
             </div>
           </div>
