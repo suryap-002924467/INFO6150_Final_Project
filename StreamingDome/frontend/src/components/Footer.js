@@ -55,7 +55,7 @@ const Footer = () => {
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-globe"></i> English
                   </button> */}
-                  <label for="language">Language:&nbsp;</label>
+                  <label htmlFor='language'>Language:&nbsp;</label>
 
                   <select name="Language" id="language">
                     <option value="English">English</option>
