@@ -10,7 +10,7 @@ import {
   productReviewCreateReducer,
   productTopRatedReducer,
 } from './reducers/productReducers'
-import { cartReducer, cartMyReducer } from './reducers/cartReducers'
+import { cartReducer } from './reducers/cartReducers'
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -28,6 +28,7 @@ import {
   orderListMyReducer,
   orderListReducer,
 } from './reducers/orderReducers'
+import { wishReducer } from './reducers/wishReducers'
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -38,6 +39,7 @@ const reducer = combineReducers({
   productReviewCreate: productReviewCreateReducer,
   productTopRated: productTopRatedReducer,
   cart: cartReducer,
+  wish: wishReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
@@ -51,12 +53,16 @@ const reducer = combineReducers({
   orderDeliver: orderDeliverReducer,
   orderListMy: orderListMyReducer,
   orderList: orderListReducer,
-  cartItemsMy: cartMyReducer,
 })
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : []
+
+const wishItemsFromStorage = localStorage.getItem('wishItems')
+  ? JSON.parse(localStorage.getItem('wishItems'))
+  : []
+
 
 const userInfoFromStorage = localStorage.getItem('userInfo')
   ? JSON.parse(localStorage.getItem('userInfo'))
@@ -67,7 +73,15 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
   : {}
 
 const initialState = {
+  cart: {
+    cartItems: cartItemsFromStorage,
+    shippingAddress: shippingAddressFromStorage,
+  },
   userLogin: { userInfo: userInfoFromStorage },
+  wish: {
+    wishItems: wishItemsFromStorage, shippingAddress: shippingAddressFromStorage,
+
+  },
 }
 
 const middleware = [thunk]

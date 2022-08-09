@@ -96,7 +96,7 @@ const OrderScreen = ({ match, history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-
+              
               <p>
                 <strong>Name: </strong> {order.user.name}
               </p>
@@ -104,7 +104,7 @@ const OrderScreen = ({ match, history }) => {
                 <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
-
+              
             </ListGroup.Item>
 
             <ListGroup.Item>
@@ -145,10 +145,6 @@ const OrderScreen = ({ match, history }) => {
                         <Col md={4}>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
-                      </Row>
-                      <Row>
-                        <Col md={4}><h4>Expiry date:</h4></Col>
-                        <Col md={4}><h4>{item.expiry_date}</h4></Col>
                       </Row>
                     </ListGroup.Item>
                   ))}

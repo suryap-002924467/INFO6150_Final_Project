@@ -6,13 +6,13 @@ const Footer = () => {
     <footer className="py-5 bg-dark text-center text-white">
       <Container>
         <Row>
-          <div className="col-md-10 mx-auto">
-            <div className="row">
-              <div className="col-md-12">
+          <div class="col-md-10 mx-auto">
+            <div class="row">
+              <div class="col-md-12">
                 <p>Questions? Call 1-844-505-2993</p>
               </div>
-              <div className="col-6 col-md-3">
-                <ul className="nav flex-column">
+              <div class="col-6 col-md-3">
+                <ul class="nav flex-column">
                   <li>FAQ</li>
                   <li>Investor Relations</li>
                   <li>Ways to Watch</li>
@@ -21,8 +21,8 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-6 col-md-3">
-                <ul className="nav flex-column">
+              <div class="col-6 col-md-3">
+                <ul class="nav flex-column">
                   <li>Help Center</li>
                   <li>Jobs</li>
                   <li>Terms of Use</li>
@@ -30,8 +30,8 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-6 col-md-3">
-                <ul className="nav flex-column">
+              <div class="col-6 col-md-3">
+                <ul class="nav flex-column">
                   <li>Account</li>
                   <li>Redeem Gift Cards</li>
                   <li>Privacy</li>
@@ -39,8 +39,8 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-6 col-md-3">
-                <ul className="nav flex-column">
+              <div class="col-6 col-md-3">
+                <ul class="nav flex-column">
                   <li>Media Center</li>
                   <li>Buy Gift Cards</li>
                   <li>Cookie Preferences</li>
@@ -48,20 +48,20 @@ const Footer = () => {
                 </ul>
 
               </div>
-              <div className="col-md-12">
-                <div className="dropdown mt-4">
-                  <button className="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
+              <div class="col-md-12">
+                <div class="dropdown mt-4">
+                  <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i className="fa fa-globe"></i> English
+                    <i class="fa fa-globe"></i> English
                   </button>
-                  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#">English</a>
-                    <a className="dropdown-item" href="#">Hindi</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">Hindi</a>
                   </div>
                 </div>
               </div>
-              <div className="col-md-12">
-                <p className="copyright mt-3">StreamingDome</p>
+              <div class="col-md-12">
+                <p class="copyright mt-3">StreamingDome</p>
               </div>
             </div>
           </div>

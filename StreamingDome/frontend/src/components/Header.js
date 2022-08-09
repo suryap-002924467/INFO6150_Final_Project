@@ -30,13 +30,13 @@ const Header = () => {
               {userInfo && (<LinkContainer to='/cart'><Nav.Link>
                 <i className='fas fa-shopping-cart'></i>
               </Nav.Link></LinkContainer>)}
+              {userInfo && (<LinkContainer to='/wish'><Nav.Link>
+                <i className='fas fa-heart'></i>
+              </Nav.Link></LinkContainer>)}
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/purchases'>
-                    <NavDropdown.Item>Purchases</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout

@@ -17,8 +17,6 @@ const LoginScreen = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
 
-  let errorMsg = ""
-
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
   useEffect(() => {
@@ -32,36 +30,24 @@ const LoginScreen = ({ location, history }) => {
     dispatch(login(email, password))
   }
 
-  const emailChange = (value) => {
-    if(value.length < 5) {
-        errorMsg = "Enter more than 5 characters";
-        console.log(errorMsg);
-    }
-    else {
-      setEmail(value)
-    }
-    
-  }
-
   return (
     <FormContainer>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label style={{color: "black"}}>Email Address</Form.Label>
+          <Form.Label style={{color: "white"}}>Email Address</Form.Label>
           <Form.Control size="lg"
             type='email'
             placeholder='Enter email'
             required
             value={email}
-            onChange={(e) => emailChange(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">{errorMsg}</Form.Control.Feedback>
         </Form.Group>
-        
+
         <Form.Group controlId='password'>
-          <Form.Label style={{color: "black"}}>Password</Form.Label>
+          <Form.Label style={{color: "white"}}>Password</Form.Label>
           <Form.Control size="lg"
             type='password'
             placeholder='Enter password'
@@ -69,6 +55,7 @@ const LoginScreen = ({ location, history }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
+          
         </Form.Group>
 
         <Button type='submit' variant='info'>
