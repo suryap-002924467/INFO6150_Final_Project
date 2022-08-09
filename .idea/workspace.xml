@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f6351f-f9bc-4d0d-b223-d6c6718edd9d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/routes/userRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" afterDir="false" />
-    </list>
+    <list default="true" id="3110c486-b5ad-45d4-9f52-5de4bca0cd78" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,19 +13,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2D7zZAFiLwr3tU8Qte09pKR3Hsb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Anjali/Documents/Web Design/Final_project/INFO6150_Final_Project",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3110c486-b5ad-45d4-9f52-5de4bca0cd78" name="Changes" comment="" />
+      <created>1660064964091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660064964091</updated>
+      <workItem from="1660064969902" duration="2760000" />
+    </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
