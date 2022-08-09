@@ -40,13 +40,14 @@ const ProductListScreen = ({ history, match }) => {
 
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET })
+    console.log(products)
 
     if (!userInfo || !userInfo.isAdmin) {
       history.push('/login')
     }
 
     if (successCreate) {
-      history.push(`/admin/product/${createdProduct.id}/edit`)
+      history.push(`/admin/product/${createdProduct._id}/edit`)
     } else {
       dispatch(listProducts('', pageNumber))
     }
@@ -97,10 +98,11 @@ const ProductListScreen = ({ history, match }) => {
               <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>Release Date</th>
+                <th>Buy Price</th>
+                <th>Rent Price</th>
+                {/* <th>Release Date</th> */}
                 <th>Overview</th>
                 <th>Languages</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -108,7 +110,9 @@ const ProductListScreen = ({ history, match }) => {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.original_title}</td>
-                  <td>${product.release_date}</td>
+                  <td>{product.price}</td>
+                  <td>{product.rent_price}</td>
+                  {/* <td>{product.release_date}</td> */}
                   <td>{product.overview}</td>
                   <td>{product.original_language}</td>
                   <td>
