@@ -10,7 +10,7 @@ import {
   productReviewCreateReducer,
   productTopRatedReducer,
 } from './reducers/productReducers'
-import { cartReducer } from './reducers/cartReducers'
+import { cartReducer, cartMyReducer } from './reducers/cartReducers'
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -53,6 +53,7 @@ const reducer = combineReducers({
   orderDeliver: orderDeliverReducer,
   orderListMy: orderListMyReducer,
   orderList: orderListReducer,
+  cartItemsMy: cartMyReducer,
 })
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
@@ -73,14 +74,9 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
   : {}
 
 const initialState = {
-  cart: {
-    cartItems: cartItemsFromStorage,
-    shippingAddress: shippingAddressFromStorage,
-  },
   userLogin: { userInfo: userInfoFromStorage },
   wish: {
     wishItems: wishItemsFromStorage, shippingAddress: shippingAddressFromStorage,
-
   },
 }
 

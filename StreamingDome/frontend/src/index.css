@@ -46,3 +46,21 @@ h2 {
     font-size: 2.5vw;
   }
 }
+form {
+  width: 70%;
+  background-color:	rgb(51, 51, 51);
+  box-shadow: 5px 5px 5px 	rgb(51, 51, 51);
+}
+@media (max-width: 575.98px) {
+  form {
+      width: 100%;
+  }
+}
+
+.color-overlay {
+  position: relative;
+  /* background-color: rgba(0,0,0,0.2); */
+  height: 60%;
+  width: 100%;
+  mix-blend-mode: normal;
+}
