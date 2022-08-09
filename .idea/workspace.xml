@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assignment5/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/StreamingDome/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/StreamingDome/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/cartController.js" afterDir="false" />
@@ -13,7 +14,6 @@
       <change afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/logo.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PurchaseScreen.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment5/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/models/orderModel.js" afterDir="false" />
@@ -21,18 +21,14 @@
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/cartActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/actions/userActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/constants/cartConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/reducers/cartReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/CartScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/PlaceOrderScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/ProductEditScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/ProductEditScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/ProductListScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/ProductListScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/RegisterScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/screens/RegisterScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StreamingDome/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/package.json" afterDir="false" />
