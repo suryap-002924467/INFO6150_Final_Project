@@ -13,8 +13,6 @@ const orderSchema = mongoose.Schema(
         qty: { type: Number, required: true },
         poster_path: { type: String, required: true },
         price: { type: Number, required: true },
-        purchase: {type: String, required: false, default: "Buy"},
-        expiry_date: { type: String, required: false},
         product: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,

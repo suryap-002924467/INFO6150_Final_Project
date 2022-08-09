@@ -1,5 +1,4 @@
 import express from 'express'
-import { getMyOrders } from '../controllers/orderController.js'
 const router = express.Router()
 import {
   authUser,
@@ -11,8 +10,6 @@ import {
   getUserById,
   updateUser,
 } from '../controllers/userController.js'
-
-import { addItemsToCart, getMyOrderItems } from '../controllers/cartController.js'
 import { protect, admin } from '../middleware/authMiddleware.js'
 
 router.route('/').post(registerUser).get(protect, admin, getUsers)
@@ -21,13 +18,6 @@ router
   .route('/profile')
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile)
-
-router
-  .route('/purchases')
-  .get(protect, getMyOrders)
-
-router.route('/mycart/items').put(protect, addItemsToCart).get(protect, getMyOrderItems)
-
 router
   .route('/:id')
   .delete(protect, admin, deleteUser)
