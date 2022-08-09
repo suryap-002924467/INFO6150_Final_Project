@@ -17,6 +17,8 @@ const LoginScreen = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
 
+  let errorMsg = ""
+
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
   useEffect(() => {
@@ -30,37 +32,43 @@ const LoginScreen = ({ location, history }) => {
     dispatch(login(email, password))
   }
 
-  return (
-    <FormContainer >
+  const emailChange = (value) => {
+    if(value.length < 5) {
+        errorMsg = "Enter more than 5 characters";
+        console.log(errorMsg);
+    }
+    else {
+      setEmail(value)
+    }
+    
+  }
 
+  return (
+    <FormContainer>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label style={{color: "black"}}><h1>Sign In</h1></Form.Label>
-          <br></br>
-          <Form.Label style={{color: "black"}}>Email Id</Form.Label>
+          <Form.Label style={{color: "black"}}>Email Address</Form.Label>
           <Form.Control size="lg"
-            style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => emailChange(e.target.value)}
           ></Form.Control>
+          <Form.Control.Feedback type="invalid">{errorMsg}</Form.Control.Feedback>
         </Form.Group>
-
+        
         <Form.Group controlId='password'>
           <Form.Label style={{color: "black"}}>Password</Form.Label>
           <Form.Control size="lg"
-          style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Enter password'
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
-          
         </Form.Group>
 
         <Button type='submit' variant='info'>

@@ -12,7 +12,7 @@ const getProducts = asyncHandler(async (req, res) => {
 
   const keyword = req.query.keyword
     ? {
-      original_title: {
+        original_title: {
           $regex: req.query.keyword,
           $options: 'i',
         },

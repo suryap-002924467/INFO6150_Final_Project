@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
-import { addToCart, removeFromCart } from '../actions/cartActions'
+import { addToCart, listMyCartItems, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id
@@ -11,16 +11,23 @@ const CartScreen = ({ match, location, history }) => {
   const qty = location.search ? Number(location.search.split('&')[0].split('=')[1]) : 1
   const option = location.search ? location.search.split('&')[1].split('=')[1] : "Buy"
 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart)
   const { cartItems } = cart
 
   useEffect(() => {
+    if(userInfo) {
+      console.log('Fetching cart items')
+      dispatch(listMyCartItems())
+    }
     if (productId) {
       dispatch(addToCart(productId, qty, option))
     }
-  }, [dispatch, productId, qty, option])
+  }, [dispatch, userInfo, productId, qty, option])
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
@@ -58,6 +65,7 @@ const CartScreen = ({ match, location, history }) => {
                     <Form.Control
                       as='select'
                       custom
+                      value={item.purchase}
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, 1, e.target.value)
@@ -73,7 +81,7 @@ const CartScreen = ({ match, location, history }) => {
 
                     </Form.Control>
                   </Col>
-                  <Col md={2}>
+                  <Col md={1}>
                     <Button
                       type='button'
                       variant='light'
@@ -82,7 +90,13 @@ const CartScreen = ({ match, location, history }) => {
                       <i className='fas fa-trash'></i>
                     </Button>
                   </Col>
+                
                 </Row>
+                <br />
+                {item.purchase === "Rent" ?<Row>
+                      <Col md={4}><h6>You have 30 days till the rental expires and once started 48 hrs to finish watching</h6></Col>
+                      <Col md={4}><h6>{item.expiry_date}</h6></Col>
+                      </Row> : <></>}
               </ListGroup.Item>
             ))}
           </ListGroup>

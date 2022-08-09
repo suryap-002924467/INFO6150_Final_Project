@@ -6,24 +6,23 @@ const Footer = () => {
     <footer className="py-5 bg-dark text-center text-white">
       <Container>
         <Row>
-          <div class="col-md-10 mx-auto" align="left">
-            <div class="row">
-              <div class="col-md-12">
+          <div className="col-md-10 mx-auto">
+            <div className="row">
+              <div className="col-md-12">
                 <p>Questions? Call 1-844-505-2993</p>
               </div>
-              <br></br>
-              <div class="col-6 col-md-3">
-                <ul class="nav flex-column">
+              <div className="col-6 col-md-3">
+                <ul className="nav flex-column">
                   <li>FAQ</li>
-
+                  <li>Investor Relations</li>
                   <li>Ways to Watch</li>
-
+                  <li>Corporate Information</li>
                   <li>Only on StreamingDome</li>
                 </ul>
               </div>
 
-              <div class="col-6 col-md-3">
-                <ul class="nav flex-column">
+              <div className="col-6 col-md-3">
+                <ul className="nav flex-column">
                   <li>Help Center</li>
                   <li>Jobs</li>
                   <li>Terms of Use</li>
@@ -31,42 +30,38 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div class="col-6 col-md-3">
-                <ul class="nav flex-column">
+              <div className="col-6 col-md-3">
+                <ul className="nav flex-column">
                   <li>Account</li>
                   <li>Redeem Gift Cards</li>
                   <li>Privacy</li>
-
+                  <li>Speed Test</li>
                 </ul>
               </div>
 
-              <div class="col-6 col-md-3">
-                <ul class="nav flex-column">
-
+              <div className="col-6 col-md-3">
+                <ul className="nav flex-column">
+                  <li>Media Center</li>
                   <li>Buy Gift Cards</li>
                   <li>Cookie Preferences</li>
-
+                  <li>Legal Notices</li>
                 </ul>
 
               </div>
-              <div class="col-md-12">
-                <div class="dropdown mt-4">
-                  {/* <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
+              <div className="col-md-12">
+                <div className="dropdown mt-4">
+                  <button className="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-globe"></i> English
-                  </button> */}
-                  <label for="language">Language:&nbsp;</label>
-
-                  <select name="Language" id="language">
-                    <option value="English">English</option>
-                    <option value="French">French</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Hindi">Hindi</option>
-                  </select>
+                    <i className="fa fa-globe"></i> English
+                  </button>
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" href="#">English</a>
+                    <a className="dropdown-item" href="#">Hindi</a>
+                  </div>
                 </div>
               </div>
-              <div class="col-sm" align="center">
-                <p class="copyright mt-3"> Copy right @StreamingDome</p>
+              <div className="col-md-12">
+                <p className="copyright mt-3">StreamingDome</p>
               </div>
             </div>
           </div>

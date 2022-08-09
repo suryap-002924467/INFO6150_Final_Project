@@ -47,10 +47,6 @@ const ProductScreen = ({ history, match }) => {
     history.push(`/cart/${match.params.id}?qty=1&option=${purchase}`)
   }
 
-  const addToWishHandler = () => {
-    history.push(`/wish/${match.params.id}?qty=1&option=${purchase}`)
-  }
-
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(
@@ -131,12 +127,12 @@ const ProductScreen = ({ history, match }) => {
                             custom
                             onChange={(e) => setPurchase(e.target.value)}
                           >
-                            <option key="Buy" value="Buy">
-                              Buy
-                            </option>
-                            <option key="Rent" value="Rent">
-                              Rent
-                            </option>
+                                <option key="Buy" value="Buy">
+                                  Buy
+                                </option>
+                                <option key="Rent" value="Rent">
+                                  Rent
+                                </option>
                           </Form.Control>
                         </Col>
                       </Row>
@@ -152,28 +148,20 @@ const ProductScreen = ({ history, match }) => {
                     >
                       Add To Cart
                     </Button>
-                    <Button
-                      onClick={addToWishHandler}
-                      className='btn-block'
-                      type='button'
-                      disabled={product.availableToRent === false}
-                    >
-                      Add To Wish List
-                    </Button>
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
             </Col>
           </Row>
           <Row>
-            <Col md={12}>
-              <ListGroup>
-                <ListGroup.Item>
+          <Col md={12}>
+            <ListGroup>
+          <ListGroup.Item>
                   <h3>Description: </h3>
                   <p>{product.overview}</p>
                 </ListGroup.Item>
-              </ListGroup>
-            </Col>
+                </ListGroup>
+                </Col>
           </Row>
           <Row>
             <Col md={6}>

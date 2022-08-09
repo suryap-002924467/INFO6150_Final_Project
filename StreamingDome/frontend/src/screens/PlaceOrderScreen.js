@@ -77,23 +77,29 @@ const PlaceOrderScreen = ({ history }) => {
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={4}>
+                        <Link to={`/product/${item.product}`}>
                           <Image
                             src={item.poster_path}
                             alt={item.original_title}
                             fluid
                             rounded
                           />
+                          </Link>
                         </Col>
                         <Col>
                           <Link to={`/product/${item.product}`}>
                             {item.original_title}
                           </Link>
                         </Col>
-                        <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                        <Col md={1}>
+                          ${item.price}
                         </Col>
                       </Row>
+                      {item.option === "Rent" ?<Row>
+                      <Col md={4}><h6>Expiry date:</h6></Col>
+                      <Col md={4}><h6>{item.expiry_date}</h6></Col>
+                      </Row> : <></>}
                     </ListGroup.Item>
                   ))}
                 </ListGroup>
