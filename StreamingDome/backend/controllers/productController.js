@@ -122,7 +122,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.availableToRent = countInStock
     product.original_language = brand
-    product.image = download_image(image, "./img")
+    // product.image = download_image(image, "./img")
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {
