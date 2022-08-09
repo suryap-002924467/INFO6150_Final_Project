@@ -31,13 +31,17 @@ const LoginScreen = ({ location, history }) => {
   }
 
   return (
-    <FormContainer>
+    <FormContainer >
+
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label style={{color: "white"}}>Email Address</Form.Label>
+          <Form.Label style={{color: "black"}}><h1>Sign In</h1></Form.Label>
+          <br></br>
+          <Form.Label style={{color: "black"}}>Email Id</Form.Label>
           <Form.Control size="lg"
+            style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             required
@@ -47,8 +51,9 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
 
         <Form.Group controlId='password'>
-          <Form.Label style={{color: "white"}}>Password</Form.Label>
+          <Form.Label style={{color: "black"}}>Password</Form.Label>
           <Form.Control size="lg"
+          style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Enter password'
             required

@@ -46,6 +46,7 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='name'>
           <Form.Label>Name</Form.Label>
           <Form.Control
+           style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='name'
             placeholder='Enter name'
             value={name}
@@ -56,6 +57,7 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
+           style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             value={email}
@@ -66,6 +68,7 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
           <Form.Control
+           style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Enter password'
             value={password}
@@ -76,6 +79,7 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='confirmPassword'>
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
+           style={{color: "white",backgroundColor:"#333",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Confirm password'
             value={confirmPassword}
