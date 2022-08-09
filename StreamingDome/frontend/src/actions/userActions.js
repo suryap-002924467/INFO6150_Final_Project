@@ -79,24 +79,24 @@ export const register = (name, email, password) => async (dispatch) => {
     dispatch({
       type: USER_REGISTER_REQUEST,
     })
-
+    console.log("Check 1");
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
     }
-
+    console.log("Check 2");
     const { data } = await axios.post(
       '/api/users',
       { name, email, password },
       config
     )
-
+    console.log("Check 3");
     dispatch({
       type: USER_REGISTER_SUCCESS,
       payload: data,
     })
-
+    console.log("Check 4");
     dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data,
@@ -104,12 +104,11 @@ export const register = (name, email, password) => async (dispatch) => {
 
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
+    console.log("in catch method")
     dispatch({
       type: USER_REGISTER_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+      payload: "Please fill all required fields."
+       
     })
   }
 }
