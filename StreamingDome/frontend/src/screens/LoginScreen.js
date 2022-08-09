@@ -31,13 +31,16 @@ const LoginScreen = ({ location, history }) => {
   }
 
   return (
+    <div className="color-overlay d-flex justify-content-center align-items-center">
+       <Form className="rounded p-4 p-sm-3">
     <FormContainer>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId='email'>
+     
+        <Form.Group className="mb-3" controlId='email'>
           <Form.Label style={{color: "white"}}>Email Address</Form.Label>
-          <Form.Control size="lg"
+          <Form.Control size="small" width={50}
             type='email'
             placeholder='Enter email'
             required
@@ -46,9 +49,9 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group  className="mb-3" controlId='password'>
           <Form.Label style={{color: "white"}}>Password</Form.Label>
-          <Form.Control size="lg"
+          <Form.Control 
             type='password'
             placeholder='Enter password'
             required
@@ -65,13 +68,15 @@ const LoginScreen = ({ location, history }) => {
 
       <Row className='py-3' >
         <Col>
-          <span style={{color: "black"}}>New Customer?{' '}</span>
+          <span style={{color: "white"}}>New Customer?{' '}</span>
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          <span style={{color: "black"}}> Register</span>
+          <span style={{color: "white"}}> Register</span>
           </Link>
         </Col>
       </Row>
     </FormContainer>
+    </Form>
+    </div>
   )
 }
 
