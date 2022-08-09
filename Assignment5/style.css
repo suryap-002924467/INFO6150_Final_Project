@@ -194,3 +194,7 @@ footer .dropdown button {
   }
 }
 /*# sourceMappingURL=style.css.map */
+.pagination{
+  align-content: center;
+  padding-left: 550px;
+}
