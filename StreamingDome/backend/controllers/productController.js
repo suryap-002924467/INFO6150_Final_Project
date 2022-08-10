@@ -1,6 +1,11 @@
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
 import axios from 'axios'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+
+
+
 
 
 // @desc    Fetch all products
@@ -12,13 +17,13 @@ const getProducts = asyncHandler(async (req, res) => {
 
   const keyword = req.query.keyword
     ? {
-        name: {
-          $regex: req.query.keyword,
-          $options: 'i',
-        },
-      }
+      original_title: {
+        $regex: req.query.keyword,
+        $options: 'i',
+      },
+    }
     : {}
-  
+
   const count = await Product.countDocuments({ ...keyword })
   const products = await Product.find({ ...keyword })
     .limit(pageSize)
@@ -46,7 +51,6 @@ const getProductById = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
-
   if (product) {
     await product.remove()
     res.json({ message: 'Product removed' })
@@ -60,21 +64,35 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
-  const product = new Product({
-    name: 'Sample name',
-    price: 0,
-    user: req.user._id,
-    image: '/images/sample.jpg',
-    brand: 'Sample brand',
-    category: 'Sample category',
-    countInStock: 0,
-    numReviews: 0,
-    description: 'Sample description',
-  })
+  const product = await Product.findById("62f0679f7578464626c4a368")
+  let obj = product.toObject()
+  delete obj._id
 
-  const createdProduct = await product.save()
-  res.status(201).json(createdProduct)
+  const docClone = new Product(obj);
+  docClone.original_title = "New Movie"
+  docClone.rent_price = 0.0
+  docClone.price = 0.0
+  docClone.overview = "Enter overview"
+  docClone.language = "en"
+  await docClone.save();
+  // product._id = new mongoose.Types.ObjectId();
+  // const newProduct = await product.save()
+  res.status(201).json(docClone)
 })
+
+const download_image = (url, image_path) =>
+  axios({
+    url,
+    responseType: 'stream',
+  }).then(
+    response =>
+      new Promise((resolve, reject) => {
+        response.data
+          .pipe(fs.createWriteStream(image_path))
+          .on('finish', () => resolve())
+          .on('error', e => reject(e));
+      }),
+  );
 
 // @desc    Update a product
 // @route   PUT /api/products/:id
@@ -93,14 +111,18 @@ const updateProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
   if (product) {
-    product.name = name
+    // product.name = name
+    // product.price = price
+    // product.description = description    
+    // product.brand = brand
+    // product.category = category
+    // product.countInStock = countInStock
+    product.original_title = name
+    product.overview = description
     product.price = price
-    product.description = description
-    product.poster_path = poster_path
-    product.brand = brand
-    product.category = category
-    product.countInStock = countInStock
-
+    product.availableToRent = countInStock
+    product.original_language = brand
+    product.image = download_image(image, "./img")
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {
