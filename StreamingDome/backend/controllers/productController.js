@@ -3,9 +3,8 @@ import Product from '../models/productModel.js'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-
-
-
+import fs from 'fs'
+import request from 'request'
 
 
 // @desc    Fetch all products
@@ -80,19 +79,6 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(docClone)
 })
 
-const download_image = (url, image_path) =>
-  axios({
-    url,
-    responseType: 'stream',
-  }).then(
-    response =>
-      new Promise((resolve, reject) => {
-        response.data
-          .pipe(fs.createWriteStream(image_path))
-          .on('finish', () => resolve())
-          .on('error', e => reject(e));
-      }),
-  );
 
 // @desc    Update a product
 // @route   PUT /api/products/:id
@@ -122,7 +108,11 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.availableToRent = countInStock
     product.original_language = brand
-    // product.image = download_image(image, "./img")
+    // download(image, 'google.jpg', function () {
+    //   console.log('downloaded image');
+    // });
+    product.poster_path = process.env.TMDB_IMAGE_PREFIX + 'w500' + image
+    console.log(product.poster_path)
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {
