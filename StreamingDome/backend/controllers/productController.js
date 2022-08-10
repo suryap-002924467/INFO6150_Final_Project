@@ -63,7 +63,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
-  const product = await Product.findById("62f0679f7578464626c4a368")
+  const product = await Product.findById("62f2d5930c4142500479d0d6")
   let obj = product.toObject()
   delete obj._id
 

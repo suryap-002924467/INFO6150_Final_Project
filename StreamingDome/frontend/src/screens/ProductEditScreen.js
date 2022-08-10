@@ -8,6 +8,8 @@ import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import { Form as newForm } from 'react-bootstrap/Form';
+
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
@@ -120,21 +122,19 @@ const ProductEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Form.Group controlId='status'>
-              <Form.Label>Status</Form.Label>
-              <Form.Control
-                type='text'
+              <Form.Label>Status</Form.Label> <span> </span>
+              <Form.Control as="select"
                 placeholder='Enter Status'
                 value={status}
-                onChange={(e) => setStatus(e.target.value)}
-              ></Form.Control>
+                onChange={(e) => setStatus(e.target.value)}>
+                <option>Available</option>
+                <option>NotAvailable</option>
+              </Form.Control>
+
             </Form.Group>
+
             {/* <Form.Group controlId='status'>
-              <Form.Select aria-label="Default select example">
-                <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </Form.Select>
+
             </Form.Group> */}
 
             <Form.Group controlId='price'>
