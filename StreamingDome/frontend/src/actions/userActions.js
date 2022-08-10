@@ -107,8 +107,8 @@ export const register = (name, email, password) => async (dispatch) => {
     console.log("in catch method")
     dispatch({
       type: USER_REGISTER_FAIL,
-      payload: "Please fill all required fields."
-       
+      payload: "User Already Exits,Pls Try using valid credentials.."
+
     })
   }
 }
