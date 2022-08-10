@@ -48,8 +48,8 @@ h2 {
 }
 form {
   width: 70%;
-  background-color:	rgb(51, 51, 51);
-  box-shadow: 5px 5px 5px 	rgb(51, 51, 51);
+  /* background-color:	rgb(51, 51, 51);
+  box-shadow: 5px 5px 5px 	rgb(51, 51, 51); */
 }
 @media (max-width: 575.98px) {
   form {
@@ -57,10 +57,29 @@ form {
   }
 }
 
-.color-overlay {
+/* .color-overlay {
   position: relative;
   /* background-color: rgba(0,0,0,0.2); */
-  height: 60%;
+  /* height: 60%;
   width: 100%;
-  mix-blend-mode: normal;
-}
+  mix-blend-mode: normal; */
+/* } */ 
+/* .card :hover{
+  /* transform: (1,1); */
+  /* opacity: 1; */
+
+
+  .carousel-item :hover{
+    transform: scale(1.1);
+  }
+  .card :hover img {
+    transform:  scale(1.1);
+  }
+  .card{
+    width: 100%;
+    height: 90%;
+  }
+  .Pagination.Item {
+    text-align: center;
+
+  }

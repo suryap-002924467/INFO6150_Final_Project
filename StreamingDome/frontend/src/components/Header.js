@@ -21,7 +21,7 @@ const Header = () => {
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-        <div className="image-container">
+        <div class="image-container">
           <a href="/">
             <img src="https://i.imgur.com/7lvjVJZ.png" width="200" height="50" alt="LOGO here" />
             </a>
@@ -44,9 +44,6 @@ const Header = () => {
                 <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/purchases'>
-                    <NavDropdown.Item>My orders</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
