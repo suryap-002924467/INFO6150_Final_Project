@@ -110,9 +110,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.rent_price = category
     if (status == 'Available') product.availableToRent = true
     else if (status == 'NotAvailable') product.availableToRent = false
-    product.poster_path = nweImg ? process.env.TMDB_IMAGE_PREFIX + 'w500' + newImg[1]
-    console.log(product.poster_path)
-    console.log(status)
+    product.poster_path = process.env.TMDB_IMAGE_PREFIX + 'w500' + newImg[1]
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {
