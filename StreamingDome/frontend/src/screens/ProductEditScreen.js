@@ -8,11 +8,14 @@ import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import { Form as newForm } from 'react-bootstrap/Form';
+
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
   const [name, setName] = useState('')
+  const [status, setStatus] = useState('')
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
@@ -43,6 +46,7 @@ const ProductEditScreen = ({ match, history }) => {
       } else {
         setName(product.name)
         setPrice(product.price)
+        setStatus(product.status)
         setImage(product.image)
         setBrand(product.brand)
         setCategory(product.category)
@@ -87,6 +91,7 @@ const ProductEditScreen = ({ match, history }) => {
         category,
         description,
         countInStock,
+        status,
       })
     )
   }
@@ -116,6 +121,22 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
+            <Form.Group controlId='status'>
+              <Form.Label>Status</Form.Label> <span> </span>
+              <Form.Control as="select"
+                placeholder='Enter Status'
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}>
+                <option>Available</option>
+                <option>NotAvailable</option>
+              </Form.Control>
+
+            </Form.Group>
+
+            {/* <Form.Group controlId='status'>
+
+            </Form.Group> */}
+
             <Form.Group controlId='price'>
               <Form.Label>Buy Price</Form.Label>
               <Form.Control
@@ -126,15 +147,16 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            {/* <Form.Group controlId='price'>
+            <Form.Group controlId='category'>
               <Form.Label>Rent Price</Form.Label>
               <Form.Control
+                max={price - 1}
                 type='number'
                 placeholder='Enter price'
-                value={rent_price}
-                onChange={(e) => setPrice(e.target.value)}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
-            </Form.Group> */}
+            </Form.Group>
 
             <Form.Group controlId='description'>
               <Form.Label>Overview</Form.Label>
@@ -175,24 +197,25 @@ const ProductEditScreen = ({ match, history }) => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              {/* <Form.File
                 id='image-file'
                 label='Choose File'
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader />}
+              ></Form.File> */}
+              {/* {uploading && <Loader />} */}
             </Form.Group>
 
 
 
 
-            <Button type='submit' variant='primary'>
+            < Button type='submit' variant='primary'>
               Update
             </Button>
           </Form>
-        )}
-      </FormContainer>
+        )
+        }
+      </FormContainer >
     </>
   )
 }

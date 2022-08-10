@@ -3,9 +3,8 @@ import Product from '../models/productModel.js'
 import axios from 'axios'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-
-
-
+import fs from 'fs'
+import request from 'request'
 
 
 // @desc    Fetch all products
@@ -64,35 +63,19 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
-  const product = await Product.findById("62f0679f7578464626c4a368")
-  let obj = product.toObject()
-  delete obj._id
+  // const product = await Product.findById("62f2d5930c4142500479d0d6")
+  // let obj = product.toObject()
+  // delete obj._id
+  //
+  const docClone = new Product();
+  console.log(req.user)
+  docClone.user = req.user._id
 
-  const docClone = new Product(obj);
-  docClone.original_title = "New Movie"
-  docClone.rent_price = 0.0
-  docClone.price = 0.0
-  docClone.overview = "Enter overview"
-  docClone.language = "en"
-  await docClone.save();
   // product._id = new mongoose.Types.ObjectId();
-  // const newProduct = await product.save()
-  res.status(201).json(docClone)
+  const newProduct = await docClone.save()
+  res.status(201).json(newProduct)
 })
 
-const download_image = (url, image_path) =>
-  axios({
-    url,
-    responseType: 'stream',
-  }).then(
-    response =>
-      new Promise((resolve, reject) => {
-        response.data
-          .pipe(fs.createWriteStream(image_path))
-          .on('finish', () => resolve())
-          .on('error', e => reject(e));
-      }),
-  );
 
 // @desc    Update a product
 // @route   PUT /api/products/:id
@@ -106,10 +89,11 @@ const updateProduct = asyncHandler(async (req, res) => {
     brand,
     category,
     countInStock,
+    status,
   } = req.body
 
   const product = await Product.findById(req.params.id)
-
+  var newImg = image ? image.split('original') : ""
   if (product) {
     // product.name = name
     // product.price = price
@@ -122,7 +106,12 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.availableToRent = countInStock
     product.original_language = brand
-    product.image = download_image(image, "./img")
+    product.rent_price = category
+    if (status == 'Available') product.availableToRent = true
+    else if (status == 'NotAvailable') product.availableToRent = false
+    product.poster_path = newImg ? process.env.TMDB_IMAGE_PREFIX + 'original' + newImg[1] : ""
+    console.log(product.poster_path)
+    console.log(status)
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {
