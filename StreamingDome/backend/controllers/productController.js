@@ -92,10 +92,11 @@ const updateProduct = asyncHandler(async (req, res) => {
     brand,
     category,
     countInStock,
+    status,
   } = req.body
 
   const product = await Product.findById(req.params.id)
-
+  var newImg = image.split('original')
   if (product) {
     // product.name = name
     // product.price = price
@@ -108,11 +109,12 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.price = price
     product.availableToRent = countInStock
     product.original_language = brand
-    // download(image, 'google.jpg', function () {
-    //   console.log('downloaded image');
-    // });
-    product.poster_path = process.env.TMDB_IMAGE_PREFIX + 'w500' + image
+    product.rent_price = category
+    if (status == 'Available') product.availableToRent = true
+    else if (status == 'NotAvailable') product.availableToRent = false
+    product.poster_path = process.env.TMDB_IMAGE_PREFIX + 'original' + newImg[1]
     console.log(product.poster_path)
+    console.log(status)
     const updatedProduct = await product.save()
     res.json(updatedProduct)
   } else {

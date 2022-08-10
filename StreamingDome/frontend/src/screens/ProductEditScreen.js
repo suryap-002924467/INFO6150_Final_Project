@@ -13,6 +13,7 @@ const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
   const [name, setName] = useState('')
+  const [status, setStatus] = useState('')
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
@@ -43,6 +44,7 @@ const ProductEditScreen = ({ match, history }) => {
       } else {
         setName(product.name)
         setPrice(product.price)
+        setStatus(product.status)
         setImage(product.image)
         setBrand(product.brand)
         setCategory(product.category)
@@ -87,6 +89,7 @@ const ProductEditScreen = ({ match, history }) => {
         category,
         description,
         countInStock,
+        status,
       })
     )
   }
@@ -116,6 +119,24 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
+            <Form.Group controlId='status'>
+              <Form.Label>Status</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter Status'
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            {/* <Form.Group controlId='status'>
+              <Form.Select aria-label="Default select example">
+                <option>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </Form.Select>
+            </Form.Group> */}
+
             <Form.Group controlId='price'>
               <Form.Label>Buy Price</Form.Label>
               <Form.Control
@@ -126,15 +147,15 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            {/* <Form.Group controlId='price'>
+            <Form.Group controlId='category'>
               <Form.Label>Rent Price</Form.Label>
               <Form.Control
                 type='number'
                 placeholder='Enter price'
-                value={rent_price}
-                onChange={(e) => setPrice(e.target.value)}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
-            </Form.Group> */}
+            </Form.Group>
 
             <Form.Group controlId='description'>
               <Form.Label>Overview</Form.Label>
