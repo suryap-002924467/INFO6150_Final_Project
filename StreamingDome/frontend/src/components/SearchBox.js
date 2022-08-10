@@ -22,7 +22,8 @@ const SearchBox = ({ history }) => {
         placeholder='Search Movies...'
         className='mr-sm-2 ml-sm-5'
       ></Form.Control>
-      <Button type='submit' variant='outline-info' className='p-2'>
+       <Button type='submit' variant='outline-danger' className='p-2' >
+        {/* style={{backgroundColor:"darkred",color:"white"}} */}
         Search
       </Button>
     </Form>
