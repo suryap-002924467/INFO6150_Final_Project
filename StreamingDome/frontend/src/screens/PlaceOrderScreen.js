@@ -7,6 +7,7 @@ import CheckoutSteps from '../components/CheckoutSteps'
 import { createOrder } from '../actions/orderActions'
 import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 import { USER_DETAILS_RESET } from '../constants/userConstants'
+import { addToCart, listMyCartItems, removeFromCart } from '../actions/cartActions'
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
@@ -33,6 +34,9 @@ const PlaceOrderScreen = ({ history }) => {
 
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id))
+  }
 
   useEffect(() => {
     if (success) {
@@ -92,12 +96,21 @@ const PlaceOrderScreen = ({ history }) => {
                                   {item.original_title}
                                 </Link>
                               </Col>
-                              <Col md={1}>
+                              <Col md={2}>
                                 ${item.price}
                               </Col>
+                              <Col md={1}>
+                                <Button
+                                    type='button'
+                                    variant='light'
+                                    onClick={() => removeFromCartHandler(item.product)}
+                                >
+                                  <i className='fas fa-trash'></i>
+                                </Button>
+                              </Col>
                             </Row>
-                            {item.option === "Rent" ?<Row>
-                              <Col md={4}><h6>Expiry date:</h6></Col>
+                            {item.purchase === "Rent" ?<Row>
+                              <Col md={4}><h6>You have 30 days till the rental expires and once started 48 hrs to finish watching</h6></Col>
                               <Col md={4}><h6>{item.expiry_date}</h6></Col>
                             </Row> : <></>}
                           </ListGroup.Item>
