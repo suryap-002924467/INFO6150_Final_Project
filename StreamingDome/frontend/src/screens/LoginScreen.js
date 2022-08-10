@@ -31,11 +31,13 @@ const LoginScreen = ({ location, history }) => {
   }
 
   return (
-    <FormContainer >
-
+    <div className="color-overlay d-flex justify-content-center align-items-center">
+       <Form className="rounded p-4 p-sm-3">
+    <FormContainer>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
+
         <Form.Group controlId='email'>
           <Form.Label style={{color: "black"}}><h1>Sign In</h1></Form.Label>
           <br></br>
@@ -50,10 +52,12 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group  className="mb-3" controlId='password'>
           <Form.Label style={{color: "black"}}>Password</Form.Label>
+
           <Form.Control size="lg"
           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+
             type='password'
             placeholder='Enter password'
             required
@@ -77,6 +81,8 @@ const LoginScreen = ({ location, history }) => {
         </Col>
       </Row>
     </FormContainer>
+    </Form>
+    </div>
   )
 }
 

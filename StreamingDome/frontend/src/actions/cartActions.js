@@ -30,23 +30,23 @@ export const addToCart = (id, qty, purchase) => async (dispatch, getState) => {
     },
   })
 
-  const {
-    userLogin: { userInfo },
-  } = getState()
-
-
-  if(userInfo) {
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    }
-    const { data } = await axios.put(`/api/users/mycart/items`, getState().cart, config)
-    dispatch({type: CART_ITEMS_REQ_SUCCESS,
-      payload: data})
-  }
-  //localStorage.setItem('cartItems', JSON.stringify(cart.cartItems))
+  // const {
+  //   userLogin: { userInfo },
+  // } = getState()
+  //
+  //
+  // if(userInfo) {
+  //
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${userInfo.token}`,
+  //     },
+  //   }
+  //   const { data } = await axios.put(`/api/users/mycart/items`, getState().cart, config)
+  //   dispatch({type: CART_ITEMS_REQ_SUCCESS,
+  //     payload: data})
+  // }
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }
 
 export const removeFromCart = (id) => (dispatch, getState) => {

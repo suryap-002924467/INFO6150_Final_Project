@@ -116,7 +116,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {product.availableToRent === true ? 'Available' : 'Coming soon'}
+                        {product.availableToRent === true ? 'Available' : 'Coming Soon'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
