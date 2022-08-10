@@ -20,10 +20,10 @@ const CartScreen = ({ match, location, history }) => {
   const { cartItems } = cart
 
   useEffect(() => {
-    if(userInfo) {
-      console.log('Fetching cart items')
-      dispatch(listMyCartItems())
-    }
+    // if(userInfo) {
+    //   console.log('Fetching cart items')
+    //   dispatch(listMyCartItems())
+    // }
     if (productId) {
       dispatch(addToCart(productId, qty, option))
     }
