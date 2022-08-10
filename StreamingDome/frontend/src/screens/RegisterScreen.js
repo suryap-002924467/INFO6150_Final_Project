@@ -98,7 +98,7 @@ const RegisterScreen = ({ location, history }) => {
        <Form className="rounded p-4 p-sm-3">
     <FormContainer>
 
-      <h1 style={{color: "white"}} >Sign Up</h1>
+      <h1 style={{color: "black"}} >Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
 
