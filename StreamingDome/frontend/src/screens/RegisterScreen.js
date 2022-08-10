@@ -82,23 +82,23 @@ const RegisterScreen = ({ location, history }) => {
       setConfirmPasswordErr('Invalid confirm password')
      }
 
-    if (name !== null && email !== null && password !== null && confirmPassword !== null
+    if (name !== null && email !== null && password !== null && confirmPassword !== null 
       && correctName && correctEmail && correctPass && correctConfirmPass)  {
 
       console.log("Inside else block")
       dispatch(register(name, email, password))
     }
-
+  
   }
-
+  
 
   return (
-
+    
     <div className="color-overlay d-flex justify-content-center align-items-center">
        <Form className="rounded p-4 p-sm-3">
     <FormContainer>
 
-      <h1 style={{color: "white"}} >Sign Up</h1>
+      <h1 style={{color: "black"}} >Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
 
@@ -107,7 +107,7 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='name'>
           <Form.Label>Name</Form.Label>
           <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='name'
             placeholder='Enter name'
             value={name}
@@ -123,20 +123,20 @@ const RegisterScreen = ({ location, history }) => {
       </div>
           <div>
       </div>
-
+          
         </Form.Group>
 
 
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           >
-
+            
           </Form.Control>
           <div>
           {emailErr}
@@ -148,8 +148,9 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='password'>
           <Form.Label>Password</Form.Label>
           <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='password'
+            required
             placeholder='Enter password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -164,9 +165,9 @@ const RegisterScreen = ({ location, history }) => {
         <Form.Group controlId='confirmPassword'>
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
-
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='password'
+            required
             placeholder='Confirm password'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -178,10 +179,10 @@ const RegisterScreen = ({ location, history }) => {
 
         <Button type='submit' variant='primary' style={{backgroundColor:"black",borderRadius:"8px"}}>
           Register
-
+         
         </Button>
-
-
+        
+        
       </Form>
 
       <Row className='py-3'>

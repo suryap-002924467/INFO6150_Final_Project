@@ -37,10 +37,13 @@ const LoginScreen = ({ location, history }) => {
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-     
-        <Form.Group className="mb-3" controlId='email'>
-          <Form.Label style={{color: "black"}}>Email Address</Form.Label>
-          <Form.Control size="small" width={50}
+
+        <Form.Group controlId='email'>
+          <Form.Label style={{color: "black"}}><h1>Sign In</h1></Form.Label>
+          <br></br>
+          <Form.Label style={{color: "black"}}>Email Id</Form.Label>
+          <Form.Control size="lg"
+            style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             required
@@ -51,7 +54,10 @@ const LoginScreen = ({ location, history }) => {
 
         <Form.Group  className="mb-3" controlId='password'>
           <Form.Label style={{color: "black"}}>Password</Form.Label>
-          <Form.Control 
+
+          <Form.Control size="lg"
+          style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
+
             type='password'
             placeholder='Enter password'
             required
@@ -61,7 +67,7 @@ const LoginScreen = ({ location, history }) => {
           
         </Form.Group>
 
-        <Button type='submit' variant='info'>
+        <Button type='submit' variant='info' style={{backgroundColor:"black",borderRadius:"8px"}}>
           Sign In
         </Button>
       </Form>
@@ -70,7 +76,7 @@ const LoginScreen = ({ location, history }) => {
         <Col>
           <span style={{color: "black"}}>New Customer?{' '}</span>
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          <span style={{color: "black"}}> Register</span>
+          <span style={{color: "black"}}><u> Sign Up</u></span>
           </Link>
         </Col>
       </Row>

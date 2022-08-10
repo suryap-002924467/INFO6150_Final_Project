@@ -58,7 +58,7 @@ const ProfileScreen = ({ location, history }) => {
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
-        {}
+        { }
         {success && <Message variant='success'>Profile Updated</Message>}
         {loading ? (
           <Loader />
@@ -90,6 +90,7 @@ const ProfileScreen = ({ location, history }) => {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
+                required
                 placeholder='Enter password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -100,6 +101,7 @@ const ProfileScreen = ({ location, history }) => {
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 type='password'
+                required
                 placeholder='Confirm password'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
