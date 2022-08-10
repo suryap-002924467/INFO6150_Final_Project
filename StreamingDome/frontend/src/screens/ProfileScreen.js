@@ -28,6 +28,9 @@ const ProfileScreen = ({ location, history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
+  var emailValidation = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var letters = /^[A-Za-z0-9\s]+$/;
+  var passValidation = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/
 
   useEffect(() => {
     if (!userInfo) {
@@ -46,9 +49,13 @@ const ProfileScreen = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    if (password !== confirmPassword) {
+    if (!name.match(letters)) setMessage("Name not valid")
+    else if (!email.match(emailValidation)) setMessage("Email not valid")
+    else if (!password.match(passValidation)) setMessage("Password not valid")
+    else if (!confirmPassword.match(passValidation) || password != confirmPassword) {
       setMessage('Passwords do not match')
     } else {
+      setMessage("")
       dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
   }

@@ -41,7 +41,7 @@ const RegisterScreen = ({ location, history }) => {
 
 
 
-    var letters = /^[A-Za-z\s]+$/;
+    var letters = /^[A-Za-z0-9\s]+$/;
 
 
     setNameError("");
