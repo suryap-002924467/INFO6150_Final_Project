@@ -39,7 +39,7 @@ const LoginScreen = ({ location, history }) => {
       <Form onSubmit={submitHandler}>
      
         <Form.Group className="mb-3" controlId='email'>
-          <Form.Label style={{color: "white"}}>Email Address</Form.Label>
+          <Form.Label style={{color: "black"}}>Email Address</Form.Label>
           <Form.Control size="small" width={50}
             type='email'
             placeholder='Enter email'
@@ -50,7 +50,7 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
 
         <Form.Group  className="mb-3" controlId='password'>
-          <Form.Label style={{color: "white"}}>Password</Form.Label>
+          <Form.Label style={{color: "black"}}>Password</Form.Label>
           <Form.Control 
             type='password'
             placeholder='Enter password'
@@ -68,9 +68,9 @@ const LoginScreen = ({ location, history }) => {
 
       <Row className='py-3' >
         <Col>
-          <span style={{color: "white"}}>New Customer?{' '}</span>
+          <span style={{color: "black"}}>New Customer?{' '}</span>
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          <span style={{color: "white"}}> Register</span>
+          <span style={{color: "black"}}> Register</span>
           </Link>
         </Col>
       </Row>

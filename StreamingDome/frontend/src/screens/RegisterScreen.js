@@ -40,6 +40,7 @@ const RegisterScreen = ({ location, history }) => {
       
     
 
+
     var letters = /^[A-Za-z]+$/;
 
     setNameError("");
@@ -104,7 +105,7 @@ const RegisterScreen = ({ location, history }) => {
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group   className="mb-3" controlId='name'>
-          <Form.Label style={{color: "white"}}>Name</Form.Label>
+          <Form.Label style={{color: "black"}}>Name</Form.Label>
           <Form.Control 
             type='name'
             placeholder='Enter name'

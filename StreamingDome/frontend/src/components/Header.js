@@ -6,6 +6,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
 
+
 const Header = () => {
   const dispatch = useDispatch()
 
@@ -20,8 +21,14 @@ const Header = () => {
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
+        <div class="image-container">
+          <a href="/">
+            <img src="https://i.imgur.com/7lvjVJZ.png" width="200" height="50" alt="LOGO here" />
+            </a>
+        </div>
           <LinkContainer to='/'>
-            <Navbar.Brand>STREAMING DOME</Navbar.Brand>
+            <Navbar.Brand ></Navbar.Brand>
+            
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -37,9 +44,6 @@ const Header = () => {
                 <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/purchases'>
-                    <NavDropdown.Item>Purchases</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
