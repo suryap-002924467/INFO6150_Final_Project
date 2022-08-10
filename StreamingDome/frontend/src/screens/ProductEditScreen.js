@@ -150,6 +150,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='category'>
               <Form.Label>Rent Price</Form.Label>
               <Form.Control
+                max={price - 1}
                 type='number'
                 placeholder='Enter price'
                 value={category}
