@@ -4,6 +4,10 @@ import Order from '../models/orderModel.js'
 // @desc    Create new order
 // @route   POST /api/orders
 // @access  Private
+
+const getRentedVerb = (verb) => {
+  return verb === "Buy" ? "bought" : "rented"
+}
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
     orderItems,
@@ -12,6 +16,24 @@ const addOrderItems = asyncHandler(async (req, res) => {
     taxPrice,
     totalPrice,
   } = req.body
+
+  console.log(req.user)
+  console.log('Searching for same order items')
+
+  const myOrders = await Order.find({user: req.user})
+  console.log(myOrders)
+  if(myOrders) {
+    const oiFromPastOrders = myOrders.map(order => order.orderItems).flat()
+    console.log(oiFromPastOrders)
+    const result = orderItems.filter(i => oiFromPastOrders.some(j => i.purchase === j.purchase && j.original_title === i.original_title))
+    console.log(result);
+    if(result && result.length > 0) {
+      const movieNames = result.map(entry => {
+        throw new Error(entry.original_title + ' is already ' + getRentedVerb(entry.purchase) + '  in your account')
+      })
+      res.status(400)
+    }
+  }
 
   if (orderItems && orderItems.length === 0) {
     res.status(400)

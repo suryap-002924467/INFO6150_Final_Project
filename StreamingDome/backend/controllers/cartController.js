@@ -31,8 +31,6 @@ const addItemsToCart = asyncHandler(async (req, res) => {
       const updatedcart = await cart.save()
       res.status(201).send(updatedcart)
     }
-
-    
   }
 })
 

@@ -25,11 +25,11 @@ const productSchema = mongoose.Schema(
     },
     original_title: {
       type: String,
-      required: true,
+      required: false,
     },
     poster_path: {
       type: String,
-      required: true,
+      required: false,
     },
     backdrop_path : {
       type: String,
@@ -37,25 +37,25 @@ const productSchema = mongoose.Schema(
     },
     original_language: {
       type: String,
-      required: true,
+      required: false,
     },
     genre_ids: {
       type: Array,
-      required: true,
+      required: false,
     },
     overview: {
       type: String,
-      required: true,
+      required: false,
     },
     reviews: [reviewSchema],
     vote_average: {
       type: Number,
-      required: true,
+      required: false,
       default: 0,
     },
     vote_count: {
       type: Number,
-      required: true,
+      required: false,
       default: 0,
     },
     price: {

@@ -20,10 +20,10 @@ const CartScreen = ({ match, location, history }) => {
   const { cartItems } = cart
 
   useEffect(() => {
-    if(userInfo) {
-      console.log('Fetching cart items')
-      dispatch(listMyCartItems())
-    }
+    // if(userInfo) {
+    //   console.log('Fetching cart items')
+    //   dispatch(listMyCartItems())
+    // }
     if (productId) {
       dispatch(addToCart(productId, qty, option))
     }
@@ -129,7 +129,6 @@ const CartScreen = ({ match, location, history }) => {
                 <Button
                     type='button'
                     className='btn-block'
-                    disabled={cartItems.length === 0}
                     onClick={continueShopping}
                 >
                   Continue Shopping
