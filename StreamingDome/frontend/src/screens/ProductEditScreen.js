@@ -114,6 +114,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
+                required
                 type='text'
                 placeholder='Enter name'
                 value={name}
@@ -124,6 +125,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='status'>
               <Form.Label>Status</Form.Label> <span> </span>
               <Form.Control as="select"
+                required
                 placeholder='Enter Status'
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}>
@@ -140,6 +142,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='price'>
               <Form.Label>Buy Price</Form.Label>
               <Form.Control
+                required
                 type='number'
                 placeholder='Enter price'
                 value={price}
@@ -150,6 +153,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='category'>
               <Form.Label>Rent Price</Form.Label>
               <Form.Control
+                required
                 max={price - 1}
                 type='number'
                 placeholder='Enter price'
@@ -161,6 +165,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='description'>
               <Form.Label>Overview</Form.Label>
               <Form.Control
+                required
                 type='text'
                 placeholder='Enter Overview'
                 value={description}
@@ -182,6 +187,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='brand'>
               <Form.Label>Language</Form.Label>
               <Form.Control
+                required
                 type='text'
                 placeholder='Enter Language'
                 value={brand}
@@ -192,6 +198,7 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId='image'>
               <Form.Label>Image</Form.Label>
               <Form.Control
+                required
                 type='text'
                 placeholder='Enter image url'
                 value={image}

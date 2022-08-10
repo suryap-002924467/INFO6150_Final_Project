@@ -66,6 +66,7 @@ const UserEditScreen = ({ match, history }) => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type='name'
+                required
                 placeholder='Enter name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -76,6 +77,7 @@ const UserEditScreen = ({ match, history }) => {
               <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type='email'
+                required
                 placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
