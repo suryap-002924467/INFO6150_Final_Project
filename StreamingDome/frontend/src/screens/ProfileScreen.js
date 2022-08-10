@@ -28,6 +28,9 @@ const ProfileScreen = ({ location, history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
+  var emailValidation = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var letters = /^[A-Za-z0-9\s]+$/;
+  var passValidation = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/
 
   useEffect(() => {
     if (!userInfo) {
@@ -46,9 +49,13 @@ const ProfileScreen = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    if (password !== confirmPassword) {
+    if (!name.match(letters)) setMessage("Name not valid")
+    else if (!email.match(emailValidation)) setMessage("Email not valid")
+    else if (!password.match(passValidation)) setMessage("Password not valid")
+    else if (!confirmPassword.match(passValidation) || password != confirmPassword) {
       setMessage('Passwords do not match')
     } else {
+      setMessage("")
       dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
   }
@@ -69,6 +76,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
+                required
                 type='name'
                 placeholder='Enter name'
                 value={name}
@@ -79,6 +87,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Group controlId='email'>
               <Form.Label>Email Address</Form.Label>
               <Form.Control
+                required
                 type='email'
                 placeholder='Enter email'
                 value={email}
@@ -89,8 +98,8 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Group controlId='password'>
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type='password'
                 required
+                type='password'
                 placeholder='Enter password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -145,13 +154,13 @@ const ProfileScreen = ({ location, history }) => {
                       <i className='fas fa-times' style={{ color: 'red' }}></i>
                     )}
                   </td>
-                  <td>
+                  {/* <td>
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (
                       <i className='fas fa-times' style={{ color: 'red' }}></i>
                     )}
-                  </td>
+                  </td> */}
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
                       <Button className='btn-sm' variant='light'>

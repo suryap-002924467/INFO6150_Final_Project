@@ -37,11 +37,12 @@ const RegisterScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage('Passwords do not match')
     }
-      
-    
 
 
-    var letters = /^[A-Za-z]+$/;
+
+
+    var letters = /^[A-Za-z0-9\s]+$/;
+
 
     setNameError("");
 
@@ -51,152 +52,151 @@ const RegisterScreen = ({ location, history }) => {
     var correctConfirmPass = true;
 
     //name validation
-    if(!name.match(letters))
-     {
+    if (!name.match(letters)) {
       correctName = false;
       setNameError('Invalid name');
-     }
-     //email validation
+    }
+    //email validation
 
-     var emailValidation =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var emailValidation = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-     setEmailErr("");
+    setEmailErr("");
 
-     if(!email.match(emailValidation)) {
+    if (!email.match(emailValidation)) {
       correctEmail = false;
-      setEmailErr('Invalid email');
-     }
+      setEmailErr('Not Valid email');
+    }
 
-     setPwdError("");
-     var passValidation = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/
+    setPwdError("");
+    var passValidation = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/
 
-     if (!password.match(passValidation)) {
+    if (!password.match(passValidation)) {
       correctPass = false;
-      setPwdError('Invalid password')
-     }
+      setPwdError('Password Not Strong')
+    }
 
-     setConfirmPasswordErr("");
+    setConfirmPasswordErr("");
 
-     if (!confirmPassword.match(passValidation)) {
-       correctConfirmPass = false;
-      setConfirmPasswordErr('Invalid confirm password')
-     }
+    if (!confirmPassword.match(passValidation) || password != confirmPassword) {
+      correctConfirmPass = false;
+      setConfirmPasswordErr('Password Not Matching')
+    }
 
-    if (name !== null && email !== null && password !== null && confirmPassword !== null 
-      && correctName && correctEmail && correctPass && correctConfirmPass)  {
+    if (name !== null && email !== null && password !== null && confirmPassword !== null
+      && correctName && correctEmail && correctPass && correctConfirmPass) {
 
       console.log("Inside else block")
       dispatch(register(name, email, password))
     }
-  
+
   }
-  
+
 
   return (
-    
+
     <div className="color-overlay d-flex justify-content-center align-items-center">
-       <Form className="rounded p-4 p-sm-3">
-    <FormContainer>
+      <Form className="rounded p-4 p-sm-3">
+        <FormContainer>
 
-      <h1 style={{color: "black"}} >Sign Up</h1>
-      {message && <Message variant='danger'>{message}</Message>}
-      {error && <Message variant='danger'>{error}</Message>}
+          <h1 style={{ color: "black" }} >Sign Up</h1>
+          {message && <Message variant='danger'>{message}</Message>}
+          {error && <Message variant='danger'>{error}</Message>}
 
-      {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
-        <Form.Group controlId='name'>
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
-            type='name'
-            placeholder='Enter name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          >
+          {loading && <Loader />}
+          <Form onSubmit={submitHandler}>
+            <Form.Group controlId='name'>
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                style={{ color: "black", backgroundColor: "rgb(232, 240, 254)", borderRadius: "5px", border: "none", outline: "transparent", textIndent: "18px", padding: "10px", height: "50px", width: "110%", marginBottom: "30px" }}
+                type='name'
+                placeholder='Enter name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              >
 
-          </Form.Control>
-          <div>
-         {/* {emailErr && <p>Your email is invalid</p>}
+              </Form.Control>
+              <div>
+                {/* {emailErr && <p>Your email is invalid</p>}
          {pwdError && <p>Your password is invalid</p>} */}
-         {nameError}
+                {nameError}
 
-      </div>
-          <div>
-      </div>
-          
-        </Form.Group>
+              </div>
+              <div>
+              </div>
+
+            </Form.Group>
 
 
-        <Form.Group controlId='email'>
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
-            type='email'
-            placeholder='Enter email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          >
-            
-          </Form.Control>
-          <div>
-          {emailErr}
-         {/* {pwdError && <p>Your password is invalid</p>}
+            <Form.Group controlId='email'>
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                style={{ color: "black", backgroundColor: "rgb(232, 240, 254)", borderRadius: "5px", border: "none", outline: "transparent", textIndent: "18px", padding: "10px", height: "50px", width: "110%", marginBottom: "30px" }}
+                type='email'
+                placeholder='Enter email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              >
+
+              </Form.Control>
+              <div>
+                {emailErr}
+                {/* {pwdError && <p>Your password is invalid</p>}
          {nameError && <p>Your name is invalid</p>} */}
-      </div>
-        </Form.Group>
+              </div>
+            </Form.Group>
 
-        <Form.Group controlId='password'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
-            type='password'
-            required
-            placeholder='Enter password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></Form.Control>
-          <div>
-         {/* {emailErr && <p>Your email is invalid</p>} */}
-         {pwdError}
-         {/* {nameError && <p>Your name is invalid</p>} */}
-      </div>
-        </Form.Group>
+            <Form.Group controlId='password'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                style={{ color: "black", backgroundColor: "rgb(232, 240, 254)", borderRadius: "5px", border: "none", outline: "transparent", textIndent: "18px", padding: "10px", height: "50px", width: "110%", marginBottom: "30px" }}
+                type='password'
+                required
+                placeholder='Enter password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+              <div>
+                {/* {emailErr && <p>Your email is invalid</p>} */}
+                {pwdError}
+                {/* {nameError && <p>Your name is invalid</p>} */}
+              </div>
+            </Form.Group>
 
-        <Form.Group controlId='confirmPassword'>
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
-            type='password'
-            required
-            placeholder='Confirm password'
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          ></Form.Control>
-          <div>
-          {confirmPWdErr}
-          </div>
-        </Form.Group>
+            <Form.Group controlId='confirmPassword'>
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                style={{ color: "black", backgroundColor: "rgb(232, 240, 254)", borderRadius: "5px", border: "none", outline: "transparent", textIndent: "18px", padding: "10px", height: "50px", width: "110%", marginBottom: "30px" }}
+                type='password'
+                required
+                placeholder='Confirm password'
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></Form.Control>
+              <div>
+                {confirmPWdErr}
+              </div>
+            </Form.Group>
 
-        <Button type='submit' variant='primary' style={{backgroundColor:"black",borderRadius:"8px"}}>
-          Register
-         
-        </Button>
-        
-        
+            <Button type='submit' variant='primary' style={{ backgroundColor: "black", borderRadius: "8px" }}>
+              Register
+
+            </Button>
+
+
+          </Form>
+
+          <Row className='py-3'>
+            <Col>
+              Have an Account?{' '}
+              <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}><u>
+                Login
+              </u>
+
+              </Link>
+            </Col>
+          </Row>
+        </FormContainer>
       </Form>
-
-      <Row className='py-3'>
-        <Col>
-          Have an Account?{' '}
-          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}><u>
-            Login
-            </u>
-
-          </Link>
-        </Col>
-      </Row>
-    </FormContainer>
-    </Form>
     </div>
   )
 }
