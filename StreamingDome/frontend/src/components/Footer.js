@@ -51,14 +51,18 @@ const Footer = () => {
               </div>
               <div class="col-md-12">
                 <div class="dropdown mt-4">
-                  <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
+                  {/* <button class="btn btn-dark dropdown-toggle  py-2" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-globe"></i> English
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">English</a>
-                    <a class="dropdown-item" href="#">Hindi</a>
-                  </div>
+                  </button> */}
+                  <label for="language">Language:&nbsp;</label>
+
+                  <select name="Language" id="language">
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Hindi">Hindi</option>
+                  </select>
                 </div>
               </div>
               <div class="col-sm" align="center">
