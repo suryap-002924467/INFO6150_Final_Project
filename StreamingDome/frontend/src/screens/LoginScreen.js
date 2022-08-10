@@ -43,7 +43,7 @@ const LoginScreen = ({ location, history }) => {
           <br></br>
           <Form.Label style={{color: "black"}}>Email Id</Form.Label>
           <Form.Control size="lg"
-            style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+            style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             required
@@ -56,7 +56,7 @@ const LoginScreen = ({ location, history }) => {
           <Form.Label style={{color: "black"}}>Password</Form.Label>
 
           <Form.Control size="lg"
-          style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+          style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"110%",marginBottom:"30px"}}
 
             type='password'
             placeholder='Enter password'
