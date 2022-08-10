@@ -28,6 +28,7 @@ const WishScreen = ({ match, location, history }) => {
 	}
 
 	const addToCartHandler = () => {
+		removeFromWishHandler(match.params.id)
 		history.push(`/cart/${match.params.id}?qty=1&option=${purchase}`)
 	}
 
