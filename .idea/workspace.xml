@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93f6351f-f9bc-4d0d-b223-d6c6718edd9d" name="Changes" comment="Anjali-remove redundant files">
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/backend/models/productModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/backend/models/productModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StreamingDome/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/StreamingDome/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660064964091</updated>
       <workItem from="1660064969902" duration="2760000" />
-      <workItem from="1660088328259" duration="17208000" />
+      <workItem from="1660088328259" duration="20788000" />
     </task>
     <task id="LOCAL-00001" summary="Anjali-remove redundant files">
       <created>1660072575984</created>
