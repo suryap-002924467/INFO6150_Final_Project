@@ -53,7 +53,8 @@ const WishScreen = ({ match, location, history }) => {
 									<Col md={2}>${item.price}</Col>
 									<Col md={3}>
 										<Button
-											onClick={addToCartHandler}
+											// onClick={addToCartHandler}
+											onClick={() => {removeFromWishHandler(item.product); addToCartHandler()}}
 											className='btn-block'
 											type='button'
 											disabled={item.product.availableToRent === false}
