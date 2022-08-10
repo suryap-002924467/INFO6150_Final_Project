@@ -5,6 +5,8 @@ import Order from '../models/orderModel.js'
 // @route   POST /api/orders
 // @access  Private
 
+
+// This method is just used to map rent or buy to appropriate verb
 const getRentedVerb = (verb) => {
   return verb === "Buy" ? "bought" : "rented"
 }
@@ -20,6 +22,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
   console.log(req.user)
   console.log('Searching for same order items')
 
+  // To check if user has already placed order for similar item in the past and to block the order
   const myOrders = await Order.find({user: req.user})
   console.log(myOrders)
   if(myOrders) {
