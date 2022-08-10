@@ -82,18 +82,18 @@ const RegisterScreen = ({ location, history }) => {
       setConfirmPasswordErr('Invalid confirm password')
      }
 
-    if (name !== null && email !== null && password !== null && confirmPassword !== null 
+    if (name !== null && email !== null && password !== null && confirmPassword !== null
       && correctName && correctEmail && correctPass && correctConfirmPass)  {
 
       console.log("Inside else block")
       dispatch(register(name, email, password))
     }
-  
+
   }
-  
+
 
   return (
-    
+
     <div className="color-overlay d-flex justify-content-center align-items-center">
        <Form className="rounded p-4 p-sm-3">
     <FormContainer>
@@ -104,9 +104,10 @@ const RegisterScreen = ({ location, history }) => {
 
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-        <Form.Group   className="mb-3" controlId='name'>
-          <Form.Label style={{color: "black"}}>Name</Form.Label>
-          <Form.Control 
+        <Form.Group controlId='name'>
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='name'
             placeholder='Enter name'
             value={name}
@@ -122,18 +123,20 @@ const RegisterScreen = ({ location, history }) => {
       </div>
           <div>
       </div>
-          
+
         </Form.Group>
 
-        <Form.Group   className="mb-3" controlId='email'>
-        <Form.Label style={{color: "white"}}>Email Address</Form.Label>
-          <Form.Control  
+
+        <Form.Group controlId='email'>
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='email'
             placeholder='Enter email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           >
-            
+
           </Form.Control>
           <div>
           {emailErr}
@@ -142,9 +145,10 @@ const RegisterScreen = ({ location, history }) => {
       </div>
         </Form.Group>
 
-        <Form.Group   className="mb-3" controlId='password'>
-        <Form.Label style={{color: "white"}}>Password</Form.Label>
-          <Form.Control 
+        <Form.Group controlId='password'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
             type='password'
             placeholder='Enter password'
             value={password}
@@ -157,9 +161,11 @@ const RegisterScreen = ({ location, history }) => {
       </div>
         </Form.Group>
 
-        <Form.Group  className="mb-3" controlId='confirmPassword'>
-          <Form.Label style={{color: "white"}}>Confirm Password</Form.Label>
-          <Form.Control 
+        <Form.Group controlId='confirmPassword'>
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+           style={{color: "black",backgroundColor:"rgb(232, 240, 254)",borderRadius:"5px",border:"none",outline:"transparent", textIndent:"18px",padding:"10px",height:"50px",width:"60%",marginBottom:"30px"}}
+
             type='password'
             placeholder='Confirm password'
             value={confirmPassword}
@@ -170,20 +176,21 @@ const RegisterScreen = ({ location, history }) => {
           </div>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
+        <Button type='submit' variant='primary' style={{backgroundColor:"black",borderRadius:"8px"}}>
           Register
-         
+
         </Button>
-        
-        
+
+
       </Form>
 
       <Row className='py-3'>
         <Col>
-        <Form.Label style={{color: "white"}}>Have an Account?{' '}</Form.Label>  
-          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
+          Have an Account?{' '}
+          <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}><u>
+            Login
+            </u>
 
-          <Form.Label style={{color: "white"}}>Login{' '}</Form.Label>  
           </Link>
         </Col>
       </Row>
