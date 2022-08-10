@@ -2,8 +2,6 @@
 # Streaming Dome
 
 
-## App screenshots
-
 ## Features
 
 - Full featured Movie Streaming App
