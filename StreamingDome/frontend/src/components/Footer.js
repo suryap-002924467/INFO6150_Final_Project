@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className="py-5 bg-dark text-center text-white">
       <Container>
         <Row>
-          <div class="col-md-10 mx-auto" align="left">
+          <div class="col-md-10 mx-auto" align="left" style={{fontSize:"20px",left:"0px"}}>
             <div class="row">
               <div class="col-md-12">
-                <p>Questions? Call 1-844-505-2993</p>
+                <p>Questions? Call <a href="tel:1-844-505-2993" style={{color:"white"}}>1-844-505-2993</a></p>
               </div>
               <br></br>
               <div class="col-6 col-md-3">
